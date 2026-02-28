@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samir's Keychain</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neonGreen: '#00f6ac',
+                        darkBg: '#020202',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .delay-200 { animation-delay: 200ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-600 { animation-delay: 600ms; }
+    </style>
+</head>
+
+<body class="min-h-screen bg-darkBg flex flex-col items-center justify-center p-4 font-sans text-white">
+
+    <main class="bg-[#0a0a0a] rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.8)] border border-gray-900 p-8 max-w-sm w-full opacity-0 animate-fade-in-up">
+        
+        <div class="text-center flex flex-col items-center opacity-0 animate-fade-in-up delay-200">
+            <div class="relative w-32 h-32 mb-4 rounded-full overflow-hidden border-4 border-neonGreen shadow-[0_0_15px_rgba(0,246,172,0.4)]">
+                <img src="assets/stoledoImg.jpeg" alt="Mi Foto de Perfil" class="w-full h-full object-cover">
+            </div>
+            
+            <h1 class="text-3xl font-bold text-white mb-1">Samir Toledo</h1>
+            <h2 class="text-lg font-bold text-neonGreen uppercase tracking-wider">Universidad NUR</h2>
+            <h3 class="text-sm font-medium text-gray-300 mb-6">Estudiante de Ingeniería de Sistemas</h3>
+            
+            <p class="text-gray-400 mb-8 text-sm leading-relaxed max-w-xs mx-auto">
+                ¡Hola! Este llavero me pertenece. Si lo encontraste, usa los botones abajo.
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            
+            <a href="https://wa.me/59165883684?text=Hola,%20Encontré%20tu%20llavero." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="flex items-center justify-center w-full bg-darkBg border border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkBg font-semibold py-3 px-4 rounded-xl transition-all duration-300 shadow-sm opacity-0 animate-fade-in-up delay-400">
+                <span class="mr-2 text-xl">📲</span> Enviar WhatsApp
+            </a>
+            
+            <a href="tel:+59165883684" 
+               class="flex items-center justify-center w-full bg-darkBg border border-neonGreen text-neonGreen hover:bg-neonGreen hover:text-darkBg font-semibold py-3 px-4 rounded-xl transition-all duration-300 shadow-sm opacity-0 animate-fade-in-up delay-600">
+                <span class="mr-2 text-xl">📞</span> Llamar por Teléfono
+            </a>
+
+        </div>
+    </main>
+
+</body>
+</html>
